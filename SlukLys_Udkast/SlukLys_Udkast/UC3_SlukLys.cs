@@ -15,7 +15,7 @@ namespace SlukLys_Udkast
         NoTiltSignal,
         NoLightStateMismatch //tjekker om lampen er tændt i forvejen - måske ikke relevant
     }
-    public class UC3_SlukLys
+    public class LightGestureController
     {
         private readonly IAfstandsSensor _afstand;
         private readonly ITiltSensor _tilt;
