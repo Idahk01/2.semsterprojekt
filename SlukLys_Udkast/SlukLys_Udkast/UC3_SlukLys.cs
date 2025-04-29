@@ -13,6 +13,7 @@ namespace SlukLys_Udkast
     {
         NoHandDetected,
         NoTiltSignal,
+        NoLightStateMismatch //tjekker om lampen er tændt i forvejen - måske ikke relevant
     }
     public class UC3_SlukLys
     {
