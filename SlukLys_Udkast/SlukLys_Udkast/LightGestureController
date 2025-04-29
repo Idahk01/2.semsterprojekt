@@ -52,14 +52,23 @@ namespace SlukLys_Udkast
             _ = _tilt.DetectTiltAsync(_tiltTimeout);   // fire-and-forget
         }
         private FunctionId CalculateFunction(double cm) =>
-        cm < 30 ? FunctionId.TurnOffLight : FunctionId.Error;
-
-        private void ProcessTilt() => _ha.TurnOffLight("Stue");
-
-        private void HandleError(ErrorCode code)
+        cm switch
         {
-            Console.WriteLine($"[Controller] Error: {code}");
-            _led.ShowError();
+            < 15 => FunctionId.TurnOnLight,
+            >= 15 and < 30 => FunctionId.TurnOffLight,
+            _ => FunctionId.Error
+        };
+
+        private void IndicateFunction(FunctionId fid) => _led.SetFunction(fid);
+
+        private void ProcessTilt() 
+        {
+            switch(_currentFunction)
+            {
+                case FunctionId.TurnOnLight: _ha.TurnOnLight("Stue"); break;
+                case FunctionID.TurnOffLight: _ha.TurnOffLight("Stue"); break;
+                default: HandleError(ErrorCode.NoTiltSignal); break;
+            }
         }
     }
 }
