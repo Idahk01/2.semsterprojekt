@@ -8,6 +8,7 @@ namespace SlukLys_Udkast
 {
     public enum FunctionId : byte
     {
+       TurnOnLight = 1,
         TurnOffLight = 3,
         Error = 255
         // … tilføj flere hvis du får brug for dem
