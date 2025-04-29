@@ -9,6 +9,7 @@ namespace SlukLys_Udkast
     public interface IHomeAssistant
     {
         void TurnOffLight(string room);
+        //Virker det
 
     }
 }
