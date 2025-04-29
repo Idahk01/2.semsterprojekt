@@ -12,7 +12,7 @@ namespace SlukLys_Udkast
     public enum ErrorCode
     {
         NoHandDetected,
-        NoTiltSignal
+        NoTiltSignal,
     }
     public class UC3_SlukLys
     {
