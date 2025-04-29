@@ -1,0 +1,14 @@
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\bin\Debug\net8.0\SlukLys_Udkast.exe
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\bin\Debug\net8.0\SlukLys_Udkast.deps.json
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\bin\Debug\net8.0\SlukLys_Udkast.runtimeconfig.json
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\bin\Debug\net8.0\SlukLys_Udkast.dll
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\bin\Debug\net8.0\SlukLys_Udkast.pdb
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.GeneratedMSBuildEditorConfig.editorconfig
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.AssemblyInfoInputs.cache
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.AssemblyInfo.cs
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.csproj.CoreCompileInputs.cache
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.dll
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\refint\SlukLys_Udkast.dll
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.pdb
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\SlukLys_Udkast.genruntimeconfig.cache
+C:\2_Programmering\Semesterprojekt\SlukLys_Udkast\SlukLys_Udkast\obj\Debug\net8.0\ref\SlukLys_Udkast.dll
