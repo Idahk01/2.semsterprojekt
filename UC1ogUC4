@@ -1,0 +1,129 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TaendLys_Semesterprojekt_2;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Initialisering
+        KapacitivKnap knap = new KapacitivKnap();
+        StatusLED led = new StatusLED();
+        HomeAssistant assistent = new HomeAssistant();
+        UC1_TaendSystem controller = new UC1_TaendSystem(knap, led, assistent);
+
+        Console.WriteLine("Tryk [H] for at placere hånden foran sensoren (tænd/sluk).");
+        Console.WriteLine("Tryk Ctrl+C for at afslutte.\n");
+
+        while (true)
+        {
+            var key = Console.ReadKey(true).Key;
+
+            if (key == ConsoleKey.H)
+            {
+                if (knap.RegistrerHaand())
+                {
+                    bool signal = knap.SendSignal();
+                    if (signal)
+                    {
+                        controller.ToggleSystem();
+                    }
+                }
+            }
+        }
+    }
+}
+
+// <<boundary>> Kapacitiv knap
+class KapacitivKnap
+{
+    private string tilstand = "inaktiv";
+
+    public bool RegistrerHaand()
+    {
+        Console.WriteLine("Hånd registreret foran sensoren.");
+        tilstand = "aktiv";
+        return true;
+    }
+
+    public bool SendSignal()
+    {
+        if (tilstand == "aktiv")
+        {
+            Console.WriteLine("Sender signal til controller...");
+            return true;
+        }
+        return false;
+    }
+}
+
+// <<boundary>> Status LED
+class StatusLED
+{
+    private string tilstand = "slukket";
+
+    public void Taend()
+    {
+        tilstand = "tændt";
+        Console.WriteLine("LED er tændt.");
+    }
+
+    public void Sluk()
+    {
+        tilstand = "slukket";
+        Console.WriteLine("LED er slukket.");
+    }
+}
+
+// <<boundary>> Home Assistant
+class HomeAssistant
+{
+    public bool Tilstand { get; private set; } = false;
+
+    public void Taend()
+    {
+        Tilstand = true;
+        Console.WriteLine("Home Assistant er tændt.");
+    }
+
+    public void Sluk()
+    {
+        Tilstand = false;
+        Console.WriteLine("Home Assistant er slukket.");
+    }
+}
+
+// <<controller>> UC1 – Tænd/Sluk system
+class UC1_TaendSystem
+{
+    private bool erTaendt = false;
+    private KapacitivKnap knap;
+    private StatusLED led;
+    private HomeAssistant home;
+
+    public UC1_TaendSystem(KapacitivKnap k, StatusLED l, HomeAssistant h)
+    {
+        knap = k;
+        led = l;
+        home = h;
+    }
+
+    public void ToggleSystem()
+    {
+        if (!erTaendt)
+        {
+            erTaendt = true;
+            home.Taend();
+            led.Taend();
+        }
+        else
+        {
+            erTaendt = false;
+            home.Sluk();
+            led.Sluk();
+        }
+    }
+}
